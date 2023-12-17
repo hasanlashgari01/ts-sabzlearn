@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "tsc -w types/array/array.ts"
+        "dev": "tsc -w types/any/any.ts",
+        "start": "nodemon types/any/any.js"
     },
     "keywords": [],
     "author": "",
