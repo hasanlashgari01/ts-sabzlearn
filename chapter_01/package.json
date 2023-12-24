@@ -1,13 +1,13 @@
 {
-    "name": "chapter_01",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "dev": "tsc -w types/any/any.ts",
-        "start": "nodemon types/any/any.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+  "name": "chapter_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -w types/never/never.ts",
+    "start": "node --watch types/never/never.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
