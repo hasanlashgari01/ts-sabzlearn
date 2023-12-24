@@ -6,3 +6,7 @@ class Person {
         this.age = age;
     }
 }
+const Hasan = new Person("Hasan", "hasan@gmail.com", 23);
+const HamidReza = new Person("Hamid Reza", "hamidreza@gmail.com", 18);
+const persons = [Hasan, HamidReza];
+console.log(persons);
