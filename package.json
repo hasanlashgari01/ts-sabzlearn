@@ -1,13 +1,13 @@
 {
-    "name": "chapter_01",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "dev": "tsc -w types/static-overwrite.ts",
-        "start": "node --watch types/static-overwrite.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+  "name": "chapter_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "start": "node --watch oop/dist/interface.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
