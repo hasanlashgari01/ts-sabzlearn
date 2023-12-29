@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import TodoList from "./components/TodoList";
 import { Todo } from "./components/Todos.types";
+import ThemeContextProvider from "./context/ThemeContext";
+import Header from "./components/Header";
 
 // 1 JSX.Element
 // 2 React.ReactNode
@@ -17,8 +18,9 @@ const App = (): JSX.Element => {
 
     return (
         <>
-            <h1>TypeScript</h1>
-            <TodoList todos={todos} />
+            <ThemeContextProvider>
+                <Header />
+            </ThemeContextProvider>
         </>
     );
 };
