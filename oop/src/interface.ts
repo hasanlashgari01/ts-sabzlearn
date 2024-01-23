@@ -7,7 +7,7 @@ interface NewUser {
 }
 
 // * Extends and Access Modifiers in Interface
-interface Car {
+interface Cars {
     readonly company: string;
     color: string;
     year: number;
@@ -16,7 +16,7 @@ interface Car {
     drive(speed: number): void;
 }
 
-interface PeugeotInterface extends Car {
+interface PeugeotInterface extends Cars {
     passengers: number;
 }
 

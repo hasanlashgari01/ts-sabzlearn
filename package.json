@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc -w",
-    "start": "node --watch oop/dist/interface.js"
+    "start": "node --watch oop/dist/generics.js"
   },
   "keywords": [],
   "author": "",

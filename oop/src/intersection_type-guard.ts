@@ -1,33 +1,65 @@
 // * Intersection
 type Admin = {
+    type?: "ADMIN",
     name: string;
     email: string;
 };
 
 type Seller = {
+    type?: "SELLER",
     name: string;
     age: number;
 };
 
-const newUser: Admin & Seller = {
+type SellerAdmin = Seller | Admin;
+
+const newUser: SellerAdmin = {
     name: "Ali",
     email: "ali@gamil.com",
     age: 23,
 };
 
-// * Type Guard
 const showProp = (user: Admin | Seller) => {
+    // * Type Guard
+    
     if ("email" in user) {
         console.log(user.email);
     } else if ("age" in user) {
         console.log(user.age);
     }
+
+    // * Discriminated Unions
+
+    switch (user.type) {
+      case "ADMIN": {
+        console.log(user.email)
+        break;
+      }
+      case "SELLER": {
+        console.log(user.age)
+        break;
+      }
+      default:
+        throw new Error("invalid member");
+    }
 };
 
 showProp(newUser);
 
+// * typeof as Type Guard
+
+type Combine = string | number;
+
+const add = (param1: Combine, param2 : Combine) => {
+  if (typeof param1 === 'string' && typeof param2 === 'string') {
+      return param1.toString() + param2.toString()
+  } else if (typeof param1 === 'number' && typeof param2 === 'number') {
+      return param1 + param2
+  }
+};
+
 // * Type Guard as instanceof
-class Car {
+class Cars {
     constructor(public name: string) {
         this.name = name;
     }
@@ -37,7 +69,7 @@ class Car {
     }
 }
 
-class Truck extends Car {
+class Truck extends Cars {
     constructor(public name: string) {
         super(name);
     }
@@ -47,14 +79,14 @@ class Truck extends Car {
     }
 }
 
-const useCar = (car: Car | Truck) => {
+const useCar = (car: Cars | Truck) => {
     if (car instanceof Truck) {
         car.load(200);
-    } else if (car instanceof Car) {
+    } else if (car instanceof Cars) {
         car.drive(100);
     }
 };
 
-const Pride: Car = new Car("Pride");
-const FH: Car = new Car("FH");
+const Pride: Cars = new Cars("Pride");
+const FH: Cars = new Cars("FH");
 
